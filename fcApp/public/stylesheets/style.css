@@ -1,8 +1,154 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans KR", "나눔고딕", "NanumGothic", BlinkMacSystemFont,
+    -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", sans-serif, "Helvetica Neue";
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgb(11, 134, 67);
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  margin: 0;
+}
+
+#wrapper {
+  width: fit-content;
+  height: 55vh;
+  min-height: 500px;
+
+  position: absolute;
+  top: 10%;
+  padding: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.185);
+}
+
+#title {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#sub_title {
+  font-size: 17px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#input_wrap {
+  width: 300px;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#input_wrap > h1 {
+  padding-top: 5px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.input {
+  width: 50px;
+  height: 50px;
+
+  font-size: 27px;
+  text-align: center;
+
+  border: none;
+  border-bottom: 1px solid rgb(184, 25, 25);
+}
+
+.input:focus {
+  outline: transparent;
+}
+
+#cal_history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cal_history > #history_header {
+  width: 260px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#cal_history > #history_header h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(87, 87, 87);
+}
+
+#history_list_0,
+#history_list_1,
+#history_list_2,
+#history_list_3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  color: rgb(87, 87, 87);
+}
+
+#history_list_0 {
+  width: 200px;
+}
+
+#history_list_1 {
+  width: 140px;
+}
+
+#history_list_2 {
+  width: 80px;
+}
+
+#history_list_3 {
+  width: 20px;
+}
+
+#calculate {
+  width: 300px;
+  padding: 10px 12px 10px 12px;
+
+  position: absolute;
+  bottom: 30px;
+
+  background-color: rgb(224, 107, 107);
+  border: none;
+  border-radius: 30px;
+
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+
+  cursor: pointer;
+}
+
+#calculate:hover {
+  transform: translate(0px, -1px);
+  box-shadow: 0 7px 8px rgba(65, 65, 97, 0.03);
+}
+
+#calculate:active {
+  transform: scale(0.99);
+}
+
+#calculate:focus {
+  outline: transparent;
 }

@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>산타할아버지가 선물을?</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div id="wrapper">
+      <h1 id="title">내가 산타 할아버지에게 선물을 받을 확률은?</h1>
+      <h2 id="sub_title">
+        입력창에 이름을 한 자씩 입력해 주세요.<br />
+        ( 이름이 세글자가 아닌 분들은 죄송^^ )
+      </h2>
+
+      <div id="input_wrap">
+        <input class="input" id="input0" type="text" />
+        <h1>선</h1>
+        <input class="input" id="input1" type="text" />
+        <h1>물</h1>
+        <input class="input" id="input2" type="text" />
+      </div>
+
+      <div id="cal_history">
+        <div id="history_header" class="history_list">
+          <h3 id="num0">0</h3>
+          <h3>6</h3>
+          <h3 id="num1">0</h3>
+          <h3>1</h3>
+          <h3 id="num2">0</h3>
+        </div>
+        <div id="history_list_0" class="history_list"></div>
+        <div id="history_list_1" class="history_list"></div>
+        <div id="history_list_2" class="history_list"></div>
+        <div id="history_list_3" class="history_list"></div>
+      </div>
+
+      <button id="calculate">계산하기</button>
+    </div>
+    <script type="text/javascript" src="/javascripts/app.js"></script>
   </body>
 </html>
