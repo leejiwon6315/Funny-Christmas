@@ -47,7 +47,7 @@ h1 {
 }
 
 #input_wrap {
-  width: 300px;
+  width: 350px;
   margin-top: 20px;
 
   display: flex;
@@ -62,7 +62,7 @@ h1 {
 }
 
 .input {
-  width: 50px;
+  width: 70px;
   height: 50px;
 
   font-size: 27px;
@@ -83,7 +83,7 @@ h1 {
 }
 
 #cal_history > #history_header {
-  width: 260px;
+  width: 290px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -102,12 +102,13 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-top: 15px;
 
   color: rgb(87, 87, 87);
 }
 
 #history_list_0 {
-  width: 200px;
+  width: 220px;
 }
 
 #history_list_1 {
@@ -115,11 +116,10 @@ h1 {
 }
 
 #history_list_2 {
-  width: 80px;
-}
-
-#history_list_3 {
-  width: 20px;
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 20px;
+  width: fit-content;
 }
 
 #calculate {
