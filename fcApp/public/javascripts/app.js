@@ -1,8 +1,13 @@
 let num0 = 0,
   num1 = 0,
   num2 = 0,
-  final = 0;
-
+  final = 0,
+  cnt0 = 0,
+  cnt1 = 0,
+  cnt2 = 0;
+let k0 = [],
+  k1 = [],
+  k2 = [];
 const input0 = document.getElementById("input0");
 const input1 = document.getElementById("input1");
 const input2 = document.getElementById("input2");
@@ -37,26 +42,33 @@ const historyList1 = document.getElementById("history_list_1");
 const historyList2 = document.getElementById("history_list_2");
 const calButton = document.getElementById("calculate");
 
-addNumber0 = (cnt) => {
-  output0.innerText = cnt;
+addNumber0 = (c) => {
+  output0.innerText = c;
 };
 
-addNumber1 = (cnt) => {
-  output1.innerText = cnt;
+addNumber1 = (c) => {
+  output1.innerText = c;
 };
 
-addNumber2 = (cnt) => {
-  output2.innerText = cnt;
+addNumber2 = (c) => {
+  output2.innerText = c;
 };
 
 calculate0 = (e) => {
   const i = e.keyCode;
+
   if (one.includes(i)) {
-    num0 += 1;
+    k0[cnt0] = 1;
+    num0 += k0[cnt0++];
   } else if (two.includes(i)) {
-    num0 += 2;
+    k0[cnt0] = 2;
+    num0 += k0[cnt0++];
   } else if (three.includes(i)) {
-    num0 += 3;
+    k0[cnt0] = 3;
+    num0 += k0[cnt0++];
+  } else if (i == 8) {
+    cnt0--;
+    num0 -= k0[cnt0];
   } else {
   }
 
@@ -65,12 +77,19 @@ calculate0 = (e) => {
 
 calculate1 = (e) => {
   const i = e.keyCode;
+
   if (one.includes(i)) {
-    num1 += 1;
+    k1[cnt1] = 1;
+    num1 += k1[cnt1++];
   } else if (two.includes(i)) {
-    num1 += 2;
+    k1[cnt1] = 2;
+    num1 += k1[cnt1++];
   } else if (three.includes(i)) {
-    num1 += 3;
+    k1[cnt1] = 3;
+    num1 += k1[cnt1++];
+  } else if (i == 8) {
+    cnt1--;
+    num1 -= k1[cnt1];
   } else {
   }
 
@@ -79,12 +98,19 @@ calculate1 = (e) => {
 
 calculate2 = (e) => {
   const i = e.keyCode;
+
   if (one.includes(i)) {
-    num2 += 1;
+    k2[cnt2] = 1;
+    num2 += k2[cnt2++];
   } else if (two.includes(i)) {
-    num2 += 2;
+    k2[cnt2] = 2;
+    num2 += k2[cnt2++];
   } else if (three.includes(i)) {
-    num2 += 3;
+    k2[cnt2] = 3;
+    num2 += k2[cnt2++];
+  } else if (i == 8) {
+    cnt2--;
+    num2 -= k2[cnt2];
   } else {
   }
 
@@ -93,8 +119,8 @@ calculate2 = (e) => {
 
 calPart = (text, list) => {
   const currentHistory = document.createElement("div");
-  currentHistory.innerText += text;
-  list.insertBefore(currentHistory, list.firstChild);
+  currentHistory.innerText = String(text);
+  list.insertBefore(currentHistory, list.secondChild);
 };
 
 cutNum = (s) => {
@@ -115,14 +141,17 @@ finalCalculate = () => {
   first = cutNum(first + second);
   calPart(first, historyList1);
 
+  const tmp = second;
   second = cutNum(second + second);
   calPart(second, historyList1);
 
-  third = cutNum(second + third);
+  third = cutNum(tmp + third);
   calPart(third, historyList1);
 
-  calPart(cutNum(first + second) + `%`, historyList2);
-  calPart(cutNum(second + third), historyList2);
+  const result = `${cutNum(first + second)}${cutNum(second + third)}%`;
+  const currentHistory = document.createElement("div");
+  currentHistory.innerText += result;
+  historyList2.insertBefore(currentHistory, historyList2.firstChild);
 };
 
 input0.addEventListener("keydown", calculate0);
