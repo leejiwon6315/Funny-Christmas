@@ -1,7 +1,6 @@
 let num0 = 0,
   num1 = 0,
   num2 = 0,
-  final = 0,
   cnt0 = 0,
   cnt1 = 0,
   cnt2 = 0;
